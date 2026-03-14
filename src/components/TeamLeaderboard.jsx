@@ -26,8 +26,7 @@ function TeamLeaderboard() {
 
   return (
     <div className="leaderboard-wrapper">
-      <h1 className="leaderboard-title">⛳ Masters Draft 2026</h1>
-      <h2 className="leaderboard-subtitle">Team Leaderboard</h2>
+      <h2 className="leaderboard-title">Team Leaderboard</h2>
 
       <div className="leaderboard">
         {ranked.map((participant, index) => (
