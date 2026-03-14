@@ -10,7 +10,7 @@ export const data = {
     {
       "id": 1,
       "name": "Scottie Scheffler",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Scottie_Scheffler_2023.jpg/200px-Scottie_Scheffler_2023.jpg",
+      "thumbImg": "https://images.masters.com/players/2025/240x240/46046.jpg",
       "score": -22,
       "rounds": [-4, -3, -3, -2],
       "missedCut": true
@@ -18,7 +18,7 @@ export const data = {
     {
       "id": 2,
       "name": "Rory McIlroy",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Rory_McIlroy_2013.jpg/200px-Rory_McIlroy_2013.jpg",
+      "thumbImg": "https://images.masters.com/players/2025/240x240/28237.jpg",
       "score": -8,
       "rounds": [-3, -2, -2, -1],
       "missedCut": false
