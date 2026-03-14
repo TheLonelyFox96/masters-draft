@@ -1,0 +1,125 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    background-color: var(--color-nav-bg);
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Collapsed state on scroll */
+.navbar--scrolled {
+    padding: 0.4rem 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Brand */
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--color-text);
+    letter-spacing: 0.5px;
+}
+
+.navbar__logo{
+    width: 100%;
+    max-width: 30px;
+    margin: 0px 5px;
+}
+
+/* Desktop links */
+.navbar__links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar__links a:hover {
+    color: var(--color-hover);
+}
+
+/* Hamburger button - hidden on desktop */
+.navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.navbar__hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu - hidden by default */
+.navbar__mobile {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Mobile breakpoint ── */
+@media (max-width: 768px) {
+
+    .navbar__links {
+        display: none;
+        /* Hide desktop links */
+    }
+
+    .navbar__hamburger {
+        display: flex;
+        /* Show hamburger */
+    }
+
+    .navbar__mobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        border-top: 1px solid #333;
+    }
+
+    .navbar__mobile--open {
+        display: flex;
+        /* Show when menu is open */
+    }
+
+    .navbar__mobile a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+    }
+
+    .navbar__mobile a:hover {
+        color: #f5c518;
+    }
+}
