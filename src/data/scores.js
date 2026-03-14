@@ -1,4 +1,11 @@
-{
+import josh from '../assets/josh.jpeg'
+import tom from '../assets/tom.jpeg'
+import chris from '../assets/chris.jpeg'
+import evan from '../assets/evan.jpeg'
+import harry from '../assets/harry.jpeg'
+import joe from '../assets/joe.jpeg'
+
+export const data = {
   "players": [
     {
       "id": 1,
@@ -6,7 +13,7 @@
       "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Scottie_Scheffler_2023.jpg/200px-Scottie_Scheffler_2023.jpg",
       "score": -22,
       "rounds": [-4, -3, -3, -2],
-      "missedCut": false
+      "missedCut": true
     },
     {
       "id": 2,
@@ -85,37 +92,37 @@
     {
       "id": 1,
       "name": "Tom",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dustin_Johnson_2020.jpg/200px-Dustin_Johnson_2020.jpg",
+      "thumbImg": tom,
       "picks": [1, 2, 3, 4, 5, 6]
     },
     {
       "id": 2,
       "name": "Chris",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dustin_Johnson_2020.jpg/200px-Dustin_Johnson_2020.jpg",     
+      "thumbImg": chris,
       "picks": [2, 4, 6, 7, 8, 9]
     },
     {
       "id": 3,
       "name": "Harry",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dustin_Johnson_2020.jpg/200px-Dustin_Johnson_2020.jpg",   
+      "thumbImg": harry,
       "picks": [1, 3, 5, 7, 9, 10]
     },
     {
       "id": 4,
       "name": "Evan",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dustin_Johnson_2020.jpg/200px-Dustin_Johnson_2020.jpg",     
+      "thumbImg": evan,
       "picks": [2, 3, 6, 8, 9, 10]
     },
     {
       "id": 5,
       "name": "Josh",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dustin_Johnson_2020.jpg/200px-Dustin_Johnson_2020.jpg",  
+      "thumbImg": josh,
       "picks": [1, 4, 7, 8, 9, 10]
     },
     {
       "id": 6,
       "name": "Joe",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dustin_Johnson_2020.jpg/200px-Dustin_Johnson_2020.jpg", 
+      "thumbImg": joe,
       "picks": [3, 4, 5, 6, 7, 8]
     }
   ]

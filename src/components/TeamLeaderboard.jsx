@@ -1,4 +1,4 @@
-import data from '../data/scores.json'
+import { data } from '../data/scores.js'
 import '../css/TeamLeaderboard.css'
 
 const formatScore = (score) => {
