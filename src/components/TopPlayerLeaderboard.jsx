@@ -44,7 +44,7 @@ function TopPlayersLeaderboard() {
 
             {/* Participant */}
             <div className="top-players__participant">
-              <span className="top-players__position">#{index + 1}</span>
+              <span className="top-players__position">{index + 1}</span>
               <img
                 className="top-players__thumb"
                 src={participant.thumbImg}

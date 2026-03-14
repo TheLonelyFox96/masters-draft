@@ -11,9 +11,9 @@ export const data = {
       "id": 1,
       "name": "Scottie Scheffler",
       "thumbImg": "https://images.masters.com/players/2025/240x240/46046.jpg",
-      "score": -22,
-      "rounds": [-4, -3, -3, -2],
-      "missedCut": true
+      "score": -12,
+      "rounds": [-4, -3, -3, -6],
+      "missedCut": false
     },
     {
       "id": 2,
@@ -42,7 +42,7 @@ export const data = {
     {
       "id": 5,
       "name": "Collin Morikawa",
-      "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Collin_Morikawa_2021.jpg/200px-Collin_Morikawa_2021.jpg",
+      "thumbImg": "https://images.masters.com/players/2025/240x240/50525.jpg",
       "score": -14,
       "rounds": [-2, -2, 0, 0],
       "missedCut": false

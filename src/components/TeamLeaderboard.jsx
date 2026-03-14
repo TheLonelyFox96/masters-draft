@@ -29,6 +29,12 @@ function TeamLeaderboard() {
       <h2 className="leaderboard-title">Team Leaderboard</h2>
 
       <div className="leaderboard">
+        <div className="leaderboard__header">
+          <span>Pos</span>
+          <span></span> {/* empty — sits behind thumb */}
+          <span>Participant</span>
+          <span>Score</span>
+        </div>
         {ranked.map((participant, index) => (
           <div className="leaderboard__row" key={participant.id}>
             <span className="leaderboard__position">{index + 1}</span>

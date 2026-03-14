@@ -1,7 +1,7 @@
 import './css/App.css'
 import Home from './pages/Home';
 import { Routes, Route } from 'react-router-dom';
-import PlayersScores from './pages/PlayersScore';
+import PlayersScore from './pages/PlayersScore';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <main className='main-content'>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/playersscores" element={<PlayersScores />} />
+        <Route path="/playersscores" element={<PlayersScore />} />
       </Routes>
     </main>
     </div>

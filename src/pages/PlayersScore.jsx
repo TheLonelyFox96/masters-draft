@@ -1,11 +1,12 @@
-function PlayersScores(){
+import PlayersScores from "../components/PlayersScores";
+function PlayersScore(){
     return(
-        <div>
-            <h2>
-                Player Leaderboards
-            </h2>
-        </div>
+        
+            <>
+            <h1 className="main-title">⛳ Players Scores</h1>
+            <PlayersScores />
+            </>
     )
 }
 
-export default PlayersScores;
+export default PlayersScore;
