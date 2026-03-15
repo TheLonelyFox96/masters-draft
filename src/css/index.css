@@ -15,7 +15,7 @@
   --color-nav-bg: #ffffff;
 
   /* Borders */
-  --color-divider: #2d6a4f;
+  --color-divider: #E8E8E8;
 
   /* Text */
   --color-text: #1a1a1a;
@@ -100,4 +100,11 @@ body {
   margin: 1rem 0;
   object-fit: cover;
   height: 200px;
+}
+
+@media (max-width: 768px) {
+  .main-title{
+    font-size: 0.8rem;
+    margin: 1rem;
+  }
 }
