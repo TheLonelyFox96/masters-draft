@@ -29,17 +29,17 @@ function Navbar() {
       </ul> */}
 
       {/* Hamburger Button */}
-      <button
+      {/* <button
         className="navbar__hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <span></span>
         <span></span>
         <span></span>
-      </button>
+      </button> */}
 
       {/* Mobile Menu */}
-      <ul
+      {/* <ul
         className={`navbar__mobile ${menuOpen ? "navbar__mobile--open" : ""}`}
       >
         <li>
@@ -52,7 +52,7 @@ function Navbar() {
             Player Scores
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
 }
