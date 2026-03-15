@@ -13,9 +13,23 @@
     font-weight: 400;
     color: var(--color-text);
     text-align: left;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+.leaderboard__row {
+    cursor: pointer;
+}
+
+.leaderboard__row--open {
+    background-color: #eaeae4;
+}
+
+.leaderboard__chevron {
+    font-size: 0.75rem;
+    color: #6b6f73;
 }
 
 /* ── Shared Table ── */
@@ -40,10 +54,10 @@
 }
 
 
-.leaderboard__row:last-child,
+/* .leaderboard__row:last-child,
 .top-players__row:last-child {
     border-bottom: none;
-}
+} */
 
 .leaderboard__row:hover,
 .top-players__row:hover {

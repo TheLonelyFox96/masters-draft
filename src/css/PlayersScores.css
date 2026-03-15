@@ -120,15 +120,15 @@
 
 /* ── Score Colours (shared) ── */
 .score--under {
-    color: #ba0c2f;
+    color: #ba0c2f !important;
 }
 
 .score--over {
-    color: #006747;
+    color: #006747 !important;
 }
 
 .score--even {
-    color: #6b6f73;
+    color: #6b6f73 !important;
 }
 
 /* Total column */

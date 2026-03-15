@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
 
    
@@ -39,10 +39,10 @@ body{
 
 .main-title{
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 200;
   color: var(--color-text);
   text-align: center;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .img{
