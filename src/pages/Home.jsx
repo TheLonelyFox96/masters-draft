@@ -1,6 +1,7 @@
 import TeamLeaderboard from "../components/TeamLeaderboard";
 import TopPlayerLeaderboard from "../components/TopPlayerLeaderboard";
 
+
 function Home() {
   return (
     <>
