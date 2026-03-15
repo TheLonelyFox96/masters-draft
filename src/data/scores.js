@@ -27,8 +27,8 @@ export const data = {
       "id": 3,
       "name": "Jon Rahm",
       "thumbImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Jon_Rahm_2022.jpg/200px-Jon_Rahm_2022.jpg",
-      "score": -6,
-      "rounds": [-3, -3, 0, 0],
+      "score": -7,
+      "rounds": [-3, -3, 0, -1],
       "missedCut": false
     },
     {
