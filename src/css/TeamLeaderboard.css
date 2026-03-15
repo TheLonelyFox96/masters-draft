@@ -65,7 +65,7 @@
 .leaderboard__name,
 .top-players__name {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--color-leaderboard-text);
 }
 
@@ -83,7 +83,7 @@
 .leaderboard__position,
 .top-players__position {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #6b6f73;
     width: 32px;
     flex-shrink: 0;
