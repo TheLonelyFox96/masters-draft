@@ -13,7 +13,11 @@ function Home() {
         transition={{ duration: 0.5 }}
       >
         <img className="img" src={logo} />
-        <h1 className="main-title">⛳ LEADERBOARDS</h1>
+        <p className="main-title">
+          ⛳ The Diamond Dogs (minus Nate) are back with the 2026 Masters Draft.
+          After a disappointing 2025 where Josh choked a 6 shot lead & Evan
+          claimed the title, can anyone save this competition from shame...
+        </p>
         <TeamLeaderboard />
         <TopPlayerLeaderboard />
       </motion.div>

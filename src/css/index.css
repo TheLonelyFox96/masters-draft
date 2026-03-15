@@ -1,53 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* ── Light Mode (Default) ── */
 :root {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
 
-   
-    --color-bg: #ffffff;
-    --color-nav-bg: #ffffff;
-    --color-primary: #006747;
-    --color-text: #006747;
-    --color-hover: #fce300;
+  /* Backgrounds */
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f0;
+  --color-row: #f5f5f0;
+  --color-row-hover: #eaeae4;
+  --color-row-alt: #efefea;
+  --color-header-bg: #006747;
+  --color-nav-bg: #ffffff;
 
-    --color-leaderboard-text: #006747;
-  }
+  /* Borders */
+  --color-divider: #2d6a4f;
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  /* Text */
+  --color-text: #1a1a1a;
+  --color-muted: #6b6f73;
+  --color-name: #1a1a1a;
+  --color-leaderboard-text: #1a1a1a;
 
+  /* Scores */
+  --color-under: #ba0c2f;
+  --color-over: #006747;
+  --color-even: #6b6f73;
 
+  /* Accent */
+  --color-gold: #f5c518;
+  --color-hover: #fce300;
+
+  /* Primary */
+  --color-primary: #006747;
+}
+
+/* ── Dark Mode ── */
 @media (prefers-color-scheme: dark) {
   :root {
-      --color-bg: #121212;
-      --color-nav-bg: #006747;
-      --color-primary: #ffffff;
-      --color-text: #ffffff;
-      --color-leaderboard-text: #006747;
-      --color-hover: #fce300;
+    /* Backgrounds */
+    --color-bg: #0f0f0f;
+    --color-surface: #1a1a1a;
+    --color-row: #1f1f1f;
+    --color-row-hover: #2a2a2a;
+    --color-row-alt: #242424;
+    --color-header-bg: #006747;
+    --color-nav-bg: #1a1a1a;
+
+    /* Borders */
+    --color-divider: #2d6a4f;
+
+    /* Text */
+    --color-text: #f0f0f0;
+    --color-muted: #888888;
+    --color-name: #ffffff;
+    --color-leaderboard-text: #ffffff;
+
+    /* Scores */
+    --color-under: #ba0c2f;
+    --color-over: #4a9d6f;
+    --color-even: #888888;
+
+    /* Accent */
+    --color-gold: #f5c518;
+    --color-hover: #fce300;
+
+    /* Primary */
+    --color-primary: #006747;
+  }
 }
 
+/* ── Reset ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
+/* ── Body ── */
+body {
   background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-.main-title{
-  font-size: 2rem;
+/* ── Main Title ── */
+.main-title {
+  font-size: 1rem;
   font-weight: 200;
   color: var(--color-text);
   text-align: center;
-  margin: 1rem;
+  margin: 1rem auto;
+  max-width: 900px;
 }
 
-.img{
+/* ── Hero Image ── */
+.img {
   width: 100%;
-  margin: 1rem 0rem;
+  margin: 1rem 0;
   object-fit: cover;
   height: 200px;
 }

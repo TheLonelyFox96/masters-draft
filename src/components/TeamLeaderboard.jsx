@@ -1,7 +1,6 @@
 import { data } from "../data/scores.js";
 import { useState } from "react";
 import "../css/TeamLeaderboard.css";
-import "../css/PlayersScores.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 const formatScore = (score) => {
@@ -67,7 +66,7 @@ function TeamLeaderboard() {
             .sort((a, b) => getPlayerTotal(a) - getPlayerTotal(b)); // ✅ consistent sort
 
           return (
-            <div key={participant.id}>
+            <div className="participant" key={participant.id}>
               {/* Leaderboard Row */}
               <motion.div
                 className={`leaderboard__row ${isOpen ? "leaderboard__row--open" : ""}`}
@@ -76,7 +75,15 @@ function TeamLeaderboard() {
                 transition={{ delay: index * 0.1 }}
                 onClick={() => handleToggle(participant.id)}
               >
-                <span className="leaderboard__position">{index + 1}</span>
+                <span
+                  className="leaderboard__position"
+                  style={{
+                    color:
+                      index === 0 ? "var(--color-gold)" : "var(--color-muted)",
+                  }}
+                >
+                  {index + 1}
+                </span>
                 <img
                   className="leaderboard__thumb"
                   src={participant.thumbImg}
@@ -123,6 +130,7 @@ function TeamLeaderboard() {
                       <tbody>
                         {pickedPlayers.map((player) => {
                           // ✅ using pickedPlayers not re-mapping
+                          console.log(player);
                           const total = getPlayerTotal(player); // ✅ reusing helper
                           return (
                             <tr
@@ -131,17 +139,20 @@ function TeamLeaderboard() {
                                 player.missedCut ? "row--missed-cut" : ""
                               }
                             >
-                              <td className="scores-table__name">
-                                <img
-                                  className="scores-table__thumb"
-                                  src={player.thumbImg}
-                                  alt={player.name}
-                                />
-                                {player.name}
-                                {player.missedCut && (
-                                  <span className="badge--mc">MC</span>
-                                )}
+                              <td>
+                                <div className="scores-table__name">
+                                  <img
+                                    className="scores-table__thumb"
+                                    src={player.thumbImg}
+                                    alt={player.name}
+                                  />
+                                  {player.name}
+                                  {player.missedCut && (
+                                    <span className="badge--mc">MC</span>
+                                  )}
+                                </div>
                               </td>
+
                               <td>
                                 {formatRound(
                                   player.rounds[0],

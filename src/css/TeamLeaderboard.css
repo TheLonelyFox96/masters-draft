@@ -1,3 +1,4 @@
+/* ── Wrappers ── */
 .leaderboard-wrapper,
 .top-players-wrapper {
     max-width: 900px;
@@ -5,7 +6,7 @@
     padding: 0 1rem;
 }
 
-
+/* ── Titles ── */
 .leaderboard-title,
 .top-players-title,
 .players-title {
@@ -19,126 +20,67 @@
     text-transform: uppercase;
 }
 
-.leaderboard__row {
-    cursor: pointer;
-}
-
-.leaderboard__row--open {
-    background-color: #eaeae4;
-}
-
-.leaderboard__chevron {
-    font-size: 0.75rem;
-    color: #6b6f73;
-}
-
-/* ── Shared Table ── */
+/* ── Shared Table Container ── */
 .leaderboard,
 .top-players {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
+    background-color: var(--color-surface);
 }
 
-/* ── Shared Row ── */
+/* ── Shared Header Row ── */
+.leaderboard__header,
+.top-players__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background-color: var(--color-header-bg);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.leaderboard__header span:last-child {
+    margin-left: auto;
+}
+
+/* ── Top Players Header Override ── */
+.top-players__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 80px;
+}
+
+/* ── Shared Rows ── */
 .leaderboard__row,
 .top-players__row {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: #f5f5f0;
-    border-bottom: 2px solid #e8e8e8;
+    background-color: var(--color-row);
+    border-bottom: 2px solid var(--color-divider);
     transition: background-color 0.2s ease;
 }
 
-
-/* .leaderboard__row:last-child,
-.top-players__row:last-child {
-    border-bottom: none;
-} */
+.leaderboard__row {
+    cursor: pointer;
+}
 
 .leaderboard__row:hover,
 .top-players__row:hover {
-    background-color: #eaeae4;
+    background-color: var(--color-row-hover);
 }
 
-/* ── Shared Thumbnail ── */
-.leaderboard__thumb,
-.top-players__thumb {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 2px solid #006747;
+.leaderboard__row--open {
+    background-color: var(--color-row-hover);
 }
 
-/* ── Shared Name ── */
-.leaderboard__name,
-.top-players__name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-leaderboard-text);
-}
-
-/* ── Shared Score ── */
-.leaderboard__score,
-.top-players__score {
-    font-size: 1.2rem;
-    font-weight: 900;
-    min-width: 48px;
-    text-align: right;
-    margin-left: auto;
-}
-
-/* ── Shared Position ── */
-.leaderboard__position,
-.top-players__position {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #6b6f73;
-    width: 32px;
-    flex-shrink: 0;
-}
-
-/* ── Team Leaderboard Specific ── */
-.leaderboard__row {
-    display: flex;
-}
-
-.leaderboard__header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1rem;
-    background-color: #006747;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.leaderboard__header span:last-child {
-    margin-left: auto;
-    /* Keeps Score right aligned ✅ */
-}
-
-/* ── Top Players Specific ── */
-.top-players__header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 80px;
-    padding: 0.6rem 1rem;
-    background-color: var(--color-nav-bg);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
+/* ── Top Players Row Override ── */
 .top-players__row {
     display: grid;
     grid-template-columns: 1fr 1fr 80px;
@@ -151,17 +93,194 @@
     gap: 0.6rem;
 }
 
-/* ── Score Colours (shared) ── */
+/* ── Shared Thumbnails ── */
+.leaderboard__thumb,
+.top-players__thumb,
+.accordion__thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--color-header-bg);
+}
+
+/* ── Shared Names ── */
+.leaderboard__name,
+.top-players__name,
+.accordion__name,
+.scores-table__name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-name);
+}
+
+/* ── Shared Scores ── */
+.leaderboard__score,
+.top-players__score {
+    font-size: 1.2rem;
+    font-weight: 900;
+    min-width: 48px;
+    text-align: right;
+    margin-left: auto;
+}
+
+/* ── Shared Positions ── */
+.leaderboard__position,
+.top-players__position {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    width: 32px;
+    flex-shrink: 0;
+}
+
+/* ── Chevron ── */
+.leaderboard__chevron,
+.accordion__chevron {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    opacity: 0.8;
+}
+
+/* ── Score Colours ── */
 .score--under {
-    color: #ba0c2f;
+    color: var(--color-under) !important;
 }
 
 .score--over {
-    color: #006747;
+    color: var(--color-over) !important;
 }
 
 .score--even {
-    color: #6b6f73;
+    color: var(--color-even) !important;
+}
+
+/* ── Accordion ── */
+.accordion {
+    max-width: 900px;
+    margin: 0 auto 0.75rem auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    background-color: var(--color-header-bg);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.accordion__header:hover,
+.accordion__header--open {
+    background-color: #004d34;
+}
+
+.accordion__participant {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.accordion__thumb {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #ffffff;
+}
+
+.accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion__content--open {
+    max-height: 600px;
+}
+
+/* ── Scores Table ── */
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-row-alt);
+}
+
+.scores-table thead tr {
+    background-color: var(--color-surface);
+}
+
+.scores-table th {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.scores-table th:first-child {
+    text-align: left;
+}
+
+.scores-table td {
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.scores-table tbody tr:last-child td, .participant:last-child > .leaderboard__row {
+    border-bottom: none;
+}
+
+.scores-table tbody tr:hover {
+    background-color: var(--color-row-hover);
+}
+
+/* ── Player Name Cell ── */
+.scores-table__name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left !important;
+}
+
+.scores-table__thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--color-header-bg);
+    flex-shrink: 0;
+}
+
+/* ── Total Column ── */
+.scores-table__total {
+    font-size: 1rem;
+    font-weight: 900 !important;
+}
+
+/* ── Missed Cut ── */
+.row--missed-cut {
+    opacity: 0.6;
+}
+
+/* ── MC Badge ── */
+.badge--mc {
+    font-size: 0.65rem;
+    font-weight: 700;
+    background-color: var(--color-under);
+    color: #ffffff;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    margin-left: 0.35rem;
 }
 
 /* ── Mobile ── */
@@ -179,8 +298,9 @@
         height: 36px;
     }
 
-    .leaderboard-title {
-        font-size: 1.5rem;
+    .leaderboard-title,
+    .top-players-title {
+        font-size: 1rem;
     }
 
     .top-players__row,
@@ -191,5 +311,18 @@
     .top-players__name {
         font-size: 0.8rem;
     }
-}
 
+    .accordion__header {
+        padding: 0.75rem 1rem;
+    }
+
+    .scores-table th,
+    .scores-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .scores-table__thumb {
+        display: none;
+    }
+}

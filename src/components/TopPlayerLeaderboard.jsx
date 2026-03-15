@@ -29,7 +29,7 @@ function TopPlayersLeaderboard() {
 
   return (
     <div className="top-players-wrapper">
-      <h2 className="top-players-title">🏅 Top Players</h2>
+      <h2 className="top-players-title">Players Leaderboard</h2>
 
       <div className="top-players">
         {/* Header Row */}
@@ -49,7 +49,15 @@ function TopPlayersLeaderboard() {
           >
             {/* Participant */}
             <div className="top-players__participant">
-              <span className="top-players__position">{index + 1}</span>
+              <span
+                className="top-players__position"
+                style={{
+                  color:
+                    index === 0 ? "var(--color-gold)" : "var(--color-muted)",
+                }}
+              >
+                {index + 1}
+              </span>
               <img
                 className="top-players__thumb"
                 src={participant.thumbImg}
