@@ -25,9 +25,10 @@
 .top-players {
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
     background-color: var(--color-surface);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* ── Shared Header Row ── */

@@ -12,12 +12,17 @@ function Home() {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
       >
-        <img className="img" src={logo} />
-        <p className="main-title">
-          ⛳ The Diamond Dogs (minus Nate) are back with the 2026 Masters Draft.
-          After a disappointing 2025 where Josh choked a 6 shot lead & Evan
-          claimed the title, can anyone save this competition from shame...
-        </p>
+        <div className="hero">
+          <img className="img" src={logo} />
+          <div className="hero-overlay">
+            <p className="main-title">
+              ⛳ The Diamond Dogs (minus Nate) are back with the 2026 Masters
+              Draft. After a disappointing 2025 where Josh choked a 6 shot lead
+              & Evan claimed the title, can anyone save this competition from
+              shame...
+            </p>
+          </div>
+        </div>
         <TeamLeaderboard />
         <TopPlayerLeaderboard />
       </motion.div>

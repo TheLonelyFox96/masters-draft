@@ -84,6 +84,49 @@ body {
   color: var(--color-text);
 }
 
+
+/* ── Hero  ── */
+Copy css .hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.hero img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Gradient fades image into your background colour at the top */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      #000000 0%,
+      /* ← match your bg colour */
+      transparent 40%,
+      /* ← how far the fade goes */
+      transparent 60%,
+      #000000 100%
+      /* ← optional fade at bottom too */
+    );
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  /* ← vertical centre */
+  justify-content: center;
+  /* ← horizontal centre */
+  padding: 0 16px;
+}
+
 /* ── Main Title ── */
 .main-title {
   font-size: 1rem;
@@ -92,15 +135,17 @@ body {
   text-align: center;
   margin: 1rem auto;
   max-width: 900px;
+    /* Glass effect ✨ */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #fff;
 }
 
-/* ── Hero Image ── */
-.img {
-  width: 100%;
-  margin: 1rem 0;
-  object-fit: cover;
-  height: 200px;
-}
+
 
 @media (max-width: 768px) {
   .main-title{
