@@ -1,155 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-/* ── Light Mode (Default) ── */
-:root {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+/* Tailwind v4 entrypoint */
+@import "tailwindcss";
 
-  /* Backgrounds */
-  --color-bg: #ffffff;
-  --color-surface: #f5f5f0;
-  --color-row: #f5f5f0;
-  --color-row-hover: #eaeae4;
-  --color-row-alt: #efefea;
-  --color-header-bg: #006747;
-  --color-nav-bg: #ffffff;
-
-  /* Borders */
-  --color-divider: #E8E8E8;
-
-  /* Text */
-  --color-text: #1a1a1a;
-  --color-muted: #6b6f73;
-  --color-name: #1a1a1a;
-  --color-leaderboard-text: #1a1a1a;
-
-  /* Scores */
-  --color-under: #ba0c2f;
-  --color-over: #006747;
-  --color-even: #6b6f73;
-
-  /* Accent */
-  --color-gold: #f5c518;
-  --color-hover: #fce300;
-
-  /* Primary */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  
+  /* Masters-inspired color palette - Light mode defaults */
   --color-primary: #006747;
+  --color-primary-dark: #004d34;
+  --color-bg: #f0f4eb;
+  --color-surface: #e8ece3;
+  --color-card: #ffffff;
+  --color-row: #ffffff;
+  --color-row-hover: #f5f8f2;
+  --color-row-alt: #f8faf6;
+  --color-divider: #d4dccf;
+  --color-text: #1a2e1a;
+  --color-muted: #5a6b5a;
+  --color-name: #1a2e1a;
+  --color-under: #c41e3a;
+  --color-over: #006747;
+  --color-even: #5a6b5a;
+  --color-gold: #d4af37;
+  --color-nav-bg: #006747;
+  --color-nav-text: #ffffff;
 }
 
-/* ── Dark Mode ── */
+:root {
+  font-family: "Inter", ui-sans-serif, system-ui;
+  font-size: 16px;
+
+  /* Masters-inspired color palette */
+  --color-bg: #f0f4eb;
+  --color-surface: #e8ece3;
+  --color-card: #ffffff;
+  --color-row: #ffffff;
+  --color-row-hover: #f5f8f2;
+  --color-row-alt: #f8faf6;
+
+  --color-divider: #d4dccf;
+
+  --color-text: #1a2e1a;
+  --color-muted: #5a6b5a;
+  --color-name: #1a2e1a;
+
+  --color-under: #c41e3a;
+  --color-over: #006747;
+  --color-even: #5a6b5a;
+
+  --color-gold: #d4af37;
+
+  --color-primary: #006747;
+  --color-primary-dark: #004d34;
+  --color-nav-bg: #006747;
+  --color-nav-text: #ffffff;
+  
+  /* Card shadows */
+  --shadow-card: 0 4px 16px rgba(0, 103, 71, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Backgrounds */
-    --color-bg: #0f0f0f;
-    --color-surface: #1a1a1a;
-    --color-row: #1f1f1f;
-    --color-row-hover: #2a2a2a;
-    --color-row-alt: #242424;
-    --color-header-bg: #006747;
-    --color-nav-bg: #1a1a1a;
+    --color-bg: #0a0f0a;
+    --color-surface: #141a14;
+    --color-card: #1a231a;
+    --color-row: #1a231a;
+    --color-row-hover: #243024;
+    --color-row-alt: #1f281f;
 
-    /* Borders */
-    --color-divider: #2d6a4f;
+    --color-divider: #2d4a3d;
 
-    /* Text */
-    --color-text: #f0f0f0;
-    --color-muted: #888888;
-    --color-name: #ffffff;
-    --color-leaderboard-text: #ffffff;
+    --color-text: #e8f0e8;
+    --color-muted: #8fa88f;
+    --color-name: #f0f8f0;
 
-    /* Scores */
-    --color-under: #ba0c2f;
-    --color-over: #4a9d6f;
-    --color-even: #888888;
+    --color-under: #ff6b7a;
+    --color-over: #4ade80;
+    --color-even: #8fa88f;
 
-    /* Accent */
-    --color-gold: #f5c518;
-    --color-hover: #fce300;
+    --color-gold: #fbbf24;
 
-    /* Primary */
     --color-primary: #006747;
+    --color-primary-dark: #004d34;
+    --color-nav-bg: #006747;
+    --color-nav-text: #ffffff;
+    
+    /* Card shadows for dark mode */
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+    --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
 }
 
-/* ── Reset ── */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-/* ── Body ── */
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
 }
 
+/* Utility classes for CSS variables */
+.bg-masters-green { background-color: var(--color-primary); }
+.bg-page { background-color: var(--color-bg); }
+.bg-card-surface { background-color: var(--color-card); }
+.bg-row-surface { background-color: var(--color-row); }
+.bg-row-hover-surface { background-color: var(--color-row-hover); }
+.bg-row-alt-surface { background-color: var(--color-row-alt); }
+.bg-surface-muted { background-color: var(--color-surface); }
+.bg-nav { background-color: var(--color-nav-bg); }
 
-/* ── Hero  ── */
-Copy css .hero {
-  position: relative;
-  width: 100%;
-  height: 400px;
-}
+.text-page { color: var(--color-text); }
+.text-muted-page { color: var(--color-muted); }
+.text-name-page { color: var(--color-name); }
+.text-under-score { color: var(--color-under); }
+.text-over-score { color: var(--color-over); }
+.text-even-score { color: var(--color-even); }
+.text-gold-rank { color: var(--color-gold); }
+.text-nav { color: var(--color-nav-text); }
 
-.hero img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
+.border-divider-line { border-color: var(--color-divider); }
+.divide-divider-line > :not(:last-child) { border-bottom-color: var(--color-divider); }
 
-/* Gradient fades image into your background colour at the top */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom,
-      #000000 0%,
-      /* ← match your bg colour */
-      transparent 40%,
-      /* ← how far the fade goes */
-      transparent 60%,
-      #000000 100%
-      /* ← optional fade at bottom too */
-    );
-}
+.shadow-card-surface { box-shadow: var(--shadow-card); }
+.shadow-soft-surface { box-shadow: var(--shadow-soft); }
 
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  /* ← vertical centre */
-  justify-content: center;
-  /* ← horizontal centre */
-  padding: 0 16px;
-}
-
-/* ── Main Title ── */
-.main-title {
-  font-size: 1rem;
-  font-weight: 200;
-  color: var(--color-text);
-  text-align: center;
-  margin: 1rem auto;
-  max-width: 900px;
-    /* Glass effect ✨ */
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    padding: 16px 20px;
-    color: #fff;
-}
-
-
-
-@media (max-width: 768px) {
-  .main-title{
-    font-size: 0.8rem;
-    margin: 1rem;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
   }
 }

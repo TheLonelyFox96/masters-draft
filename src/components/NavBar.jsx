@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "../css/NavBar.css";
 import logo from "../assets/masters_logo.png";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,43 +13,24 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
-      <div className="navbar__brand">
-        <img className="navbar__logo" src={logo} />
-        Diamond Dogs Masters Draft
+    <nav
+      className={[
+        "sticky top-0 z-50 bg-nav transition-all duration-300",
+        scrolled ? "py-2 shadow-lg" : "p-2 py-4 sm:py-5",
+      ].join(" ")}
+      aria-label="Site header"
+    >
+      <div className="max-w-4xl mx-auto flex items-center justify-center gap-3 sm:gap-4">
+        <img
+          src={logo}
+          alt="Masters logo"
+          className="w-8 h-8 sm:w-10 sm:h-10"
+          decoding="async"
+        />
+        <span className="text-nav font-semibold text-base sm:text-lg tracking-wide">
+          Diamond Dogs Masters Draft
+        </span>
       </div>
-
-      {/* Desktop Nav */}
-      {/* <ul className="navbar__links">
-        <li><Link to="/">Leaderboard</Link></li>
-        <li><Link to="/playersscores">Player Scores</Link></li>
-      </ul> */}
-
-      {/* Hamburger Button */}
-      {/* <button
-        className="navbar__hamburger"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button> */}
-
-      {/* Mobile Menu */}
-      {/* <ul
-        className={`navbar__mobile ${menuOpen ? "navbar__mobile--open" : ""}`}
-      >
-        <li>
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            Leaderboard
-          </Link>
-        </li>
-        <li>
-          <Link to="/playersscores" onClick={() => setMenuOpen(false)}>
-            Player Scores
-          </Link>
-        </li>
-      </ul> */}
     </nav>
   );
 }
