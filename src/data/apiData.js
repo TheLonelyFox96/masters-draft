@@ -146,7 +146,7 @@ export function mapPlayers(apiResponse) {
           if (hole.Birdie) return total - 1;
           if (hole.Bogey) return total + 1;
           if (hole.DoubleBogey) return total + 2;
-          if (hole.WorseThanDoubleBogey) return total + (hole.ToPar ?? 3); // ToPar is reliable per-hole
+          if (hole.WorseThanDoubleBogey) return total + 3; // ToPar is reliable per-hole
           return total; // par
         }, 0);
       }),
