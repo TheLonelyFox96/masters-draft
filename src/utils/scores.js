@@ -13,17 +13,12 @@ export function formatRound(score, missed, roundIndex) {
 }
 
 export function getPlayerTotal(player) {
-  const rounds = player?.rounds ?? [];
-
-  // Missed cut players only have meaningful scores for the first two rounds.
   if (player?.missedCut) {
+    const rounds = player?.rounds ?? [];
     const r0 = typeof rounds[0] === "number" ? rounds[0] : 0;
     const r1 = typeof rounds[1] === "number" ? rounds[1] : 0;
     return r0 + r1;
   }
-
-  return rounds.reduce((acc, v) => {
-    return acc + (typeof v === "number" ? v : 0);
-  }, 0);
+  return player?.score ?? 0; // ← trust the API total directly
 }
 

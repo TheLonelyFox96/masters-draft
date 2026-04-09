@@ -128,11 +128,28 @@ export function mapPlayers(apiResponse) {
     name: player.Name,
     score: player.TotalScore ?? 0,
     missedCut: player.MadeCut === 0,
+    // rounds: [0, 1, 2, 3].map((i) => {
+    //   const r = player.Rounds.find((r) => r.Number === i + 1);
+    //   if (!r || r.Holes.length === 0) return null;
+    //   return r.Holes.reduce((total, hole) => total + calcHoleToPar(hole), 0);
+    // }),
     rounds: [0, 1, 2, 3].map((i) => {
-      const r = player.Rounds.find((r) => r.Number === i + 1);
-      if (!r || r.Holes.length === 0) return null;
-      return r.Holes.reduce((total, hole) => total + calcHoleToPar(hole), 0);
-    }),
+        const r = player.Rounds.find((r) => r.Number === i + 1);
+        if (!r) return null;
+      
+        const completedHoles = r.Holes.filter((h) => h.Score !== null);
+        if (completedHoles.length === 0) return null;
+      
+        return completedHoles.reduce((total, hole) => {
+          if (hole.DoubleEagle) return total - 3;
+          if (hole.Eagle) return total - 2;
+          if (hole.Birdie) return total - 1;
+          if (hole.Bogey) return total + 1;
+          if (hole.DoubleBogey) return total + 2;
+          if (hole.WorseThanDoubleBogey) return total + (hole.ToPar ?? 3); // ToPar is reliable per-hole
+          return total; // par
+        }, 0);
+      }),
     thumbImg: playerImages[player.PlayerID] ?? "/images/default.png",
   }));
 }
