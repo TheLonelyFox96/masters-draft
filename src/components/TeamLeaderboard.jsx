@@ -5,10 +5,17 @@ import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import { participants } from "../data/participants";
 import { formatRound, formatScore, getPlayerTotal } from "../utils/scores";
 
+// const getTeamScore = (participant, players) => {
+//   return participant.picks.reduce((total, pickId) => {
+//     const player = players.find((p) => p.id === pickId);
+//     return total + (player ? player.score : 0);
+//   }, 0);
+// };
+
 const getTeamScore = (participant, players) => {
   return participant.picks.reduce((total, pickId) => {
     const player = players.find((p) => p.id === pickId);
-    return total + (player ? player.score : 0);
+    return total + (player ? getPlayerTotal(player) : 0); // ← use getPlayerTotal instead of player.score
   }, 0);
 };
 
